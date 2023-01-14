@@ -11,6 +11,8 @@ import errorHandling from 'middlewares/errorHandling';
 
 const app = express();
 
+app.disable("x-powered-by");
+
 app.use(parser.json());
 app.use(cookieParser());
 app.use(
