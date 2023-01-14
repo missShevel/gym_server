@@ -11,6 +11,9 @@ const storage = multer.diskStorage({
     const ext = path.extname(res.originalname);
     cb(null, v4() + ext);
   },
+  limits: {
+    fileSize: 10000000; // Sensitive: 10MB is more than the recommended limit of 8MB
+  },
 });
 
 const upload = multer({ storage });
